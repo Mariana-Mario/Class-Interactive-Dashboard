@@ -1,0 +1,96 @@
+
+<html>
+<title>A Quiz Program</title>
+<body>
+<script type="text/javascript">
+var sum=0;//global variable
+
+function openfile(var1,var2,var3,var4) 
+{
+	alert("Java Script function is being called!!");
+	if (var1 == var2) 
+	{
+		var optioncontrol = document.getElementById(var3);
+		var textcontrol = document.getElementById(var4);
+		textcontrol.value = "2";
+		optioncontrol.disabled = true;
+		textcontrol.disabled = true;
+ 		sum = sum + 2;
+		var txt = document.getElementById("total");			
+		txt.value=sum; 
+	}
+	else 
+	{
+		var optioncontrol = document.getElementById(var3);
+		var textcontrol = document.getElementById(var4);
+		textcontrol.value = "-1";
+		optioncontrol.disabled = true;
+		textcontrol.disabled = true;
+		sum = sum - 1;
+		var txt = document.getElementById("total");			
+		txt.value=sum;
+		alert("Right Answer is " + var2);
+	}	
+}
+</script>
+<table border="5" cellpadding="5" align="center"  bgcolor="ff0000">
+<tr><td>Lets Have A Quiz</td></tr>
+</table>
+<table border="5" cellpadding="8" cellspacing="2" align="center">
+<tr><td>Sr. No.</td><td>Question</td><td>Answer</td><td>Choose Answer</td><td>Marks</td></tr>
+<tr><td>1.</td><td>Who is the father of computer</td><td>A. Charls babage<br>B. Bill Gates<br>C. Stevan<br>D. None of these</td><td>
+<select id="Option1" onChange="openfile(this.value,'A','Option1','ans1')">
+    <option>Answer</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>    
+</select>
+</td>
+
+<td> <input type="text" id="ans1" size="1" value='0'></td></tr>
+
+<tr><td>2.</td><td>Unix is</td><td>A. Single user Operating System<br>B. Multiuser Opering System<br>C. Windows Operating System<br>D. None of these</td><td>
+<select id="Option2" onChange="openfile(this.value,'B','Option2','ans2')">
+    <option>Answer</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>    
+</select>
+</td><td><input type="text" id="ans2" size="1" value='0'></td></tr>
+<tr><td>3.</td><td>Result of 1/0</td><td>
+A. Not defined<br>B. Infinity<br>C. Finite<br>D. None of these</td><td>
+<select id="Option3" onChange="openfile(this.value,'B','Option3','ans3')">
+    <option>Answer</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>    
+</select>
+</td><td><input type="text" id="ans3" size="1" value='0'></td></tr>
+<tr><td>4.</td><td>Pincode of HMR is</td><td>A. 110092<br>B. 110095<br>C. 110036<br>D. 110091</td><td>
+<select id="Option4" onChange="openfile(this.value,'C','Option4','ans4')">
+    <option>Answer</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>    
+</select>
+</td><td><input type="text" id="ans4" size="1" value='0'></td></tr>
+<tr><td>5.</td><td>An elephant is</td><td>A. Bird<br>B. Animal<br>C. Human<br>D. None of these</td><td>
+<select id="Option5" onChange="openfile(this.value,'D','Option5','ans5')">
+    <option>Answer</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>    
+</select>
+</td><td><input type="text" id="ans5" size="1" value='0'></td></tr>
+</table>
+<table border="5" cellpadding="5" align="center">
+<tr><td>Note: For every correct answer 2 marks & for wrong answer -1 marks<td>Marks Obtained</td><td><input type="text" id="total" size="1" value='0'></td></tr>
+</table>
+
+</body>
+</html>
